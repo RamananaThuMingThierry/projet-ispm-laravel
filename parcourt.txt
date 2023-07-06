@@ -1,0 +1,20 @@
+. Créer le projet laravel nommer "projet-ispm-laravel"
+  -> composer create-project laravel/laravel --prefer-dist projet-ispm-laravel
+
+
+. Création des modèles
+  -> php artisan make:model Classes
+  -> php artisan make:model Filieres
+  -> php artisan make:model Etudiants
+
+. Créations des migrations
+  -> php artisan make:migration create_classes_table --create=Classes
+  -> php artisan make:migration create_filieres_table --create=Filieres
+  -> php artisan make:migration create_etudiants_table --create=Etudiants
+  
+. Créations des controllers avec api
+  -> php artisan make:controller ClassesController --api --model=Classes
+  -> php artisan make:controller FilieresController --api --model=Filieres
+  -> php artisan make:controller EtudiantsController --api --model=Etudiants
+
+ 
