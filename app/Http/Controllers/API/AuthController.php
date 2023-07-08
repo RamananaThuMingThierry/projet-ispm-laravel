@@ -34,7 +34,7 @@ class AuthController extends Controller
 
             }else{
 
-                if($user->roles === 1) // 1 pour admin
+                if($user->roles === 0) // 1 pour admin
                 {
                     $role = "admin";
                     $token = $user->createToken($user->email.'_AdminToken', ['server:admin'])->plainTextToken;
@@ -88,7 +88,7 @@ class AuthController extends Controller
     }
 
     public function logout(){
-      //  auth()->user()->tokens()->delete();
+        //auth()->user()->tokens()->delete();
         return response()->json([
             'status' => 200,
             'message' => "Déconnexion effectuée avec succès!",
