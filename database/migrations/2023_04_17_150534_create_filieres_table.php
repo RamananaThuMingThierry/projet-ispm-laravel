@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('Nom_Filieres', 250);
             $table->string('Sigle_Filieres', 50);
-            $table->foreignId('Classes_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('Departement_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

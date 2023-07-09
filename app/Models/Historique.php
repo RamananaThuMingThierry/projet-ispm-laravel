@@ -12,9 +12,13 @@ class Historique extends Model
     protected $table = "historiques";
 
     protected $fillable = [
+        "image",
         "numero",
         "entrer",
-        "sortir"
+        "sortir",
+        "code_barre",
+        "genre",
+        "type_vehicule"
     ];
 
     protected $timestamps = false;

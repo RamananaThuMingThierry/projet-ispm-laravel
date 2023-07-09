@@ -14,8 +14,14 @@ return new class extends Migration
         Schema::create('historiques', function (Blueprint $table) {
             $table->id();
             $table->string("numero");
-            $table->timestamps("entrer");
-            $table->timestamps("sortir");
+            $table->date("entrer")->nullable();
+            $table->date("sortir")->nullable();
+            $table->string("code_barre");
+            $table->string("genre");
+            $table->string("type_vehicule");
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
         });
     }
 

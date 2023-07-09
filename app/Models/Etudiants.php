@@ -13,23 +13,29 @@ class Etudiants extends Model
     protected $table = "Etudiants";
 
     protected $fillable = [
-        "Nom_Eudiants",
-        "Prenom_Etudiants",
-        "Ddn_Etudiants",
-        "Ldn_Etudiants",
-        "Sexe",
-        "Contact_Etudiants",
-        "Email_Etudiants",
-        "Adresse_Etudiants",
-        "Image_Etudiants",
-        "Documents",
-        "code_barre",
-        "NumMatriculeMoto",
-        "Filieres_id"
+        "nomEudiants",
+        "prenomEtudiants",
+        "ddnEtudiants",
+        "ldnEtudiants",
+        "sexe",
+        "contactEtudiants",
+        "emailEtudiants",
+        "adresseEtudiants",
+        "imageEtudiants",
+        "documents",
+        "codeBarre",
+        "numMatriculeMoto",
+        "Filieres_id",
+        "Classes_id"
     ];
 
     public function filieres(): BelongsTo 
     { 
         return $this->belongsTo(Filieres::class); 
+    }
+
+    public function classes(): BelongsTo 
+    { 
+        return $this->belongsTo(Classes::class); 
     }
 }

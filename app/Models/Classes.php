@@ -13,10 +13,10 @@ class Classes extends Model
 
     protected $table = "Classes";
 
-    protected $fillable = ["Niveau_Classes"];
+    protected $fillable = ["niveauClasses"];
     
-    public function filieres(): HasMany 
+    public function etudiants(): HasMany 
     { 
-        return $this->hasMany(Filieres::class); 
+        return $this->hasMany(Etudiants::class); 
     }
 }

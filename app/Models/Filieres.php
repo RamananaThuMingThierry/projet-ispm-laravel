@@ -11,12 +11,12 @@ class Filieres extends Model
 {
     use HasFactory;
 
-    protected $table = "Filiers";
+    protected $table = "Filieres";
 
     protected $fillable = [
-        "Nom_Filieres",
-        "Sigle_Filieres",
-        "Classes_id"
+        "nomFilieres",
+        "sigleFilieres",
+        "Departement_id"
     ];
 
     public function etudiants(): HasMany 
@@ -24,8 +24,8 @@ class Filieres extends Model
         return $this->hasMany(Etudiants::class); 
     }
 
-    public function classes(): BelongsTo 
+    public function departements(): BelongsTo 
     { 
-        return $this->belongsTo(Classes::class); 
+        return $this->belongsTo(Departements::class); 
     }
 }

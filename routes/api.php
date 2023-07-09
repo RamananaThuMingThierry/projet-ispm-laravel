@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ClassesController;
+use App\Http\Controllers\API\DepartementController;
 use App\Http\Controllers\API\EtudiantsController;
 use App\Http\Controllers\API\FilieresController;
 use App\Http\Controllers\API\HistoriqueController;
@@ -26,6 +27,13 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group(function(){
     Route::put('update-classes/{id}', [ClassesController::class, 'update']); // Modifier la Classes
     Route::delete('delete-classes/{id}', [ClassesController::class, 'destroy']); // Supprimer une Classe
     
+    // Départements
+    Route::get('departement', [DepartementController::class, 'index']); // Afficher toutes les département    
+    Route::post('store-departement', [DepartementController::class, 'store']);   // Créer une département
+    Route::get('edit-departement/{id}', [DepartementController::class, 'edit']); // Modifier une département
+    Route::put('update-departement/{id}', [DepartementController::class, 'update']); // Modifier une département
+    Route::delete('delete-departement/{id}', [DepartementController::class, 'destroy']); // Supprimer une département
+
     // Filières
     Route::get('filieres', [FilieresController::class, 'index']); // Afficher toutes les filières    
     Route::post('store-filieres', [FilieresController::class, 'store']);   // Créer une filière

@@ -13,19 +13,20 @@ return new class extends Migration
     {
         Schema::create('Etudiants', function (Blueprint $table) {
             $table->id();
-            $table->string("Nom_Etudiants", 255);
-            $table->String("Prenom_Etudiants", 255)->nullable();
-            $table->date("Ddn_Etudiants");
-            $table->string("Ldn_Etudiants", 255);
-            $table->string("Sexe");
-            $table->string("Contact_Etudiants");
-            $table->string("Email_Etudiants", 250);
-            $table->string("Adresse_Etudiants", 250);
-            $table->string("Image_Etudidants", 250)->nullable();
-            $table->string("NumMatriculeMoto")->nullable();
-            $table->string("Documents");
-            $table->string("code_barre");
+            $table->string("nomEtudiants", 255);
+            $table->String("prenomEtudiants", 255)->nullable();
+            $table->date("ddnEtudiants");
+            $table->string("ldnEtudiants", 255);
+            $table->string("sexe");
+            $table->string("contactEtudiants");
+            $table->string("emailEtudiants", 250);
+            $table->string("adresseEtudiants", 250);
+            $table->string("imageEtudidants", 250)->nullable();
+            $table->string("numMatriculeMoto")->nullable();
+            $table->string("documents");
+            $table->string("codeBarre");
             $table->foreignId('Filieres_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('Classes_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
